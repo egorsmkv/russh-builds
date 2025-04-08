@@ -11,7 +11,7 @@ jobs:
     
     steps:
       - name: Add tree
-        run: apt-get install -y tree
+        run: sudo apt-get install -y tree
 
       - name: Checkout code
         run: git clone https://github.com/egorsmkv/russh
