@@ -14,7 +14,7 @@ jobs:
         run: git clone https://github.com/egorsmkv/russh
       
       - name: Install Rust
-        uses: dtolnay/rust-toolchain@stable
+        uses: dtolnay/rust-toolchain@1.81.0
 
       - name: Add x86_64-unknown-linux-musl target
         run: rustup target add x86_64-unknown-linux-musl
