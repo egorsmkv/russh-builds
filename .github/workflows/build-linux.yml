@@ -1,0 +1,28 @@
+name: build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: build
+
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        run: git clone https://github.com/Eugeny/russh
+      
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Build
+        run: |
+          cd russh
+          cargo build --release --example client_exec_interactive
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: client_exec_interactive
+          path: target/release/examples/client_exec_interactive
