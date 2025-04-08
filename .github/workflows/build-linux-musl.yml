@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Add tree
+        run: apt-get install -y tree
+
       - name: Checkout code
         run: git clone https://github.com/egorsmkv/russh
       
@@ -25,7 +28,7 @@ jobs:
           cargo build --release --target x86_64-unknown-linux-musl --example client_exec_interactive
 
       - name: Check
-        run: ls -lh
+        run: tree russh/
 
       - name: Rename
         run: cp russh/target/x86_64-unknown-linux-musl/examples/client_exec_interactive russh/russh_client
