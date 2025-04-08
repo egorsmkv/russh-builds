@@ -11,7 +11,7 @@ jobs:
     
     steps:
       - name: Checkout code
-        run: git clone https://github.com/Eugeny/russh
+        run: git clone https://github.com/egorsmkv/russh
       
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
